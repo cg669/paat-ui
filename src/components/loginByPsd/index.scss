@@ -1,0 +1,36 @@
+@import '../../styles/import';
+
+$login-prefix: #{$prefix}-login-by-psd;
+
+.#{$login-prefix} {
+
+    input:-internal-autofill-previewed,
+    input:-internal-autofill-selected,
+    textarea:-internal-autofill-previewed,
+    textarea:-internal-autofill-selected,
+    select:-internal-autofill-previewed,
+    select:-internal-autofill-selected {
+        font-size: 14px !important;
+        color: #333 !important;
+        transition: background-color 5000s ease-in-out 0s !important;
+        background-color: #fff !important;
+    }
+
+    input {
+        border: 0;
+        outline: 0;
+        box-shadow: none;
+        border-bottom: 1px solid #ECECEC;
+    }
+
+    .ant-input:focus,
+    .ant-input-password:focus {
+        box-shadow: none !important;
+    }
+
+    &-btn {
+        width: 320px;
+        line-height: 42px;
+        height: 42px;
+    }
+}

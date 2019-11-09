@@ -1,0 +1,83 @@
+@mixin caret-default() {
+  content: '';
+  display: inline-block;
+  height: 0;
+  vertical-align: middle;
+  width: 0;
+}
+
+@mixin caret-left($color: #000, $width: 4px) {
+  @include caret-default;
+  border-bottom: $width solid transparent;
+
+  border-right: $width solid $color;
+  border-top: $width solid transparent;
+}
+
+@mixin caret-right($color: #000, $width: 4px) {
+  @include caret-default;
+  border-bottom: $width solid transparent;
+
+  border-left: $width solid $color;
+  border-top: $width solid transparent;
+}
+
+@mixin caret-down($color: #000, $width: 4px) {
+  @include caret-default;
+  border-left: $width solid transparent;
+  border-right: $width solid transparent;
+
+  border-top: $width solid $color;
+}
+
+@mixin caret-up($color: #000, $width: 4px) {
+  @include caret-default;
+
+  border-bottom: $width solid $color;
+  border-left: $width solid transparent;
+  border-right: $width solid transparent;
+}
+
+@mixin caret-up-border($color: #fff, $border-color: $border-color-gray, $width: 4px) {
+  position: relative;
+
+  &::before,
+  &::after {
+    left: 0;
+    position: absolute;
+  }
+
+  &::before {
+    @include caret-up($border-color, $width);
+
+    top: 0;
+  }
+
+  &::after {
+    @include caret-up($color, $width);
+
+    top: 1px;
+  }
+}
+
+@mixin caret-down-border($color: #fff, $border-color: $border-color-gray, $width: 4px) {
+  position: relative;
+
+  &::before,
+  &::after {
+    left: 0;
+    position: absolute;
+  }
+
+  &::before {
+    @include caret-down($border-color, $width);
+
+    top: 0;
+  }
+
+  &::after {
+    @include caret-down($color, $width);
+
+    top: 1px;
+  }
+}

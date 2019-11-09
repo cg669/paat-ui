@@ -1,0 +1,5 @@
+$theme-list: null !default;
+
+@function theme($key: 'default') {
+  @return map-get($theme-list, $key);
+}

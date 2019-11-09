@@ -1,0 +1,7 @@
+.#{$prefix} {
+  &-input-text {
+    @include input-default;
+
+    min-width: 160px;
+  }
+}

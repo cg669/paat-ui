@@ -1,0 +1,8 @@
+@mixin input-default() {
+  background-color: $color-white;
+  display: inline-block;
+  height: 26px;
+  padding: 0 10px;
+
+  @include border;
+}

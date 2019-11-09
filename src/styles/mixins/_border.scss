@@ -1,0 +1,27 @@
+@mixin border($color: $theme-color-border, $width: 1px, $type: solid) {
+  border: $color $width $type;
+}
+
+@mixin border-none() {
+  border: 0 none;
+}
+
+@mixin border-top($color: $theme-color-border, $width: 1px, $type: solid) {
+  border-top: $color $width $type;
+}
+
+@mixin border-right($color: $theme-color-border, $width: 1px, $type: solid) {
+  border-right: $color $width $type;
+}
+
+@mixin border-bottom($color: $theme-color-border, $width: 1px, $type: solid) {
+  border-bottom: $color $width $type;
+}
+
+@mixin border-left($color: $theme-color-border, $width: 1px, $type: solid) {
+  border-left: $color $width $type;
+}
+
+@mixin border-radius($width: 100%) {
+  border-radius: $width;
+}

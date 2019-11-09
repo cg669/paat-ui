@@ -1,0 +1,150 @@
+/* base */
+$theme-color-primary: #ff9000 !default;
+$theme-color-secondary: #ffa366 !default;
+$theme-color-default: #fafafa !default;
+$theme-color-primary-hover: #ffa633 !default;
+$theme-color-primary-active: #e58100 !default;
+$theme-color-secondary-hover: #fff9f1 !default;
+$theme-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2) !default;
+
+/* disabled */
+$theme-color-disabled: #f2f2f2 !default;
+
+/* thead */
+$theme-color-thead: #e0e0e6 !default;
+
+/* hover */
+$theme-color-hover: #008bec !default;
+
+/* success */
+$theme-success: #096 !default;
+
+/* checked */
+$theme-color-checked: $theme-color-primary !default;
+
+/* danger */
+$theme-color-danger: #c30000 !default;
+
+/* error */
+$theme-color-error: #f82c2c !default;
+$theme-color-error-active: #de2727 !default;
+
+/* font */
+$theme-color-font-primary: #333 !default;
+$theme-color-font-secondary: #999 !default;
+$theme-color-font-default: #666 !default;
+$theme-font-size: 13px !default;
+
+/* border color*/
+$theme-color-border: #ddd !default;
+$border-color-split: hsv(0, 0, 91%);
+
+/* Switch */
+$switch-height: 22px;
+$switch-sm-height: 16px;
+$switch-sm-checked-margin-left: -($switch-sm-height - 3px);
+$switch-disabled-opacity: 0.4;
+$switch-color: #ff9000;
+
+/* button */
+$theme-btn-colors: (default: #fff,
+  default-hover: $theme-color-default,
+  default-border: $theme-color-border,
+  primary: $theme-color-primary,
+  primary-hover: $theme-color-primary-hover,
+  primary-active: $theme-color-primary-active,
+  secondary-hover: $theme-color-secondary-hover,
+  primary-font: #fff,
+  danger: $theme-color-disabled,
+  danger-hover: $theme-color-error,
+  danger-active: $theme-color-error-active,
+  danger-font: $theme-color-error,
+  danger-font-hover: #fff,
+  info-font: #2785df,
+  info-font-hover: #fff,
+  disabled: $theme-color-disabled,
+  disabled-font: $theme-color-border,
+  link-secondary: $theme-color-font-secondary,
+);
+
+/* checkbox radio */
+$theme-checkbox-colors: (default: $theme-color-border,
+  checked: $theme-color-checked,
+  disabled: $theme-color-disabled,
+  disabled-font: $theme-color-font-secondary,
+  button: $theme-color-primary);
+
+/* input */
+$theme-input-colors: (border: $theme-color-border,
+  hover: $theme-color-primary,
+  disabled: $theme-color-disabled,
+  disabled-font: $theme-color-font-secondary);
+
+/* select */
+$theme-select-colors: (border: $theme-color-border,
+  font: $theme-color-font-primary,
+  hover: $theme-color-primary,
+  disabled: $theme-color-disabled,
+  disabled-font: $theme-color-font-secondary,
+  arrow: $theme-color-font-secondary,
+  placeholder: $theme-color-font-secondary);
+
+/* table */
+$theme-table-colors: (th: $theme-color-disabled,
+  border: $theme-color-border,
+  hover: $theme-color-primary,
+  hover-font: #fff,
+  link: $theme-color-primary,
+  thead:$theme-color-thead);
+
+/* breadcrumb */
+$theme-breadcrumb-colors: (border: #f0f0f0,
+  background: $theme-color-disabled,
+  color: $theme-color-primary,
+  font: $theme-color-font-default,
+  fontsize: $theme-font-size);
+
+/* tabs */
+$theme-tabs-colors: (current: $theme-color-primary,
+  disabled: $theme-color-disabled,
+  border: $theme-color-border);
+
+/* form */
+$theme-section-colors: (required: $theme-color-error,
+  detail-label: $theme-color-font-secondary);
+
+/* timerpicker */
+$theme-time-picker-colors: (disabled: $theme-color-disabled,
+  hover: $theme-color-secondary,
+  selected: $theme-color-secondary,
+  hover-font: #fff,
+  selected-font: #fff,
+  background: #fff,
+  border-hover: $theme-color-primary,
+  invalid: $theme-color-danger);
+
+/* tooltip */
+$theme-tooltip-colors: (font: #fff,
+  default: $theme-color-font-primary,
+  error: $theme-color-error,
+  success: $theme-success,
+  warning: #ffdab9,
+  warning-font: $theme-color-font-primary,
+  info: #fff,
+  info-font:$theme-color-font-primary);
+
+/* animation */
+$theme-animation: (ease-out : cubic-bezier(0.21, 0.61, 0.35, 1),
+  ease-in : cubic-bezier(0.55, 0.05, 0.67, 0.19),
+);
+
+/* Rate */
+$theme-rate-colors: (bg: $border-color-split,
+);
+/* Switch */
+$theme-switch-colors: (default-height: $switch-height,
+  sm-height: $switch-sm-height,
+  sm-checked: $switch-sm-checked-margin-left,
+  disabled-opcity: $switch-disabled-opacity,
+  color: $theme-color-primary,
+);

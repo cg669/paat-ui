@@ -1,0 +1,78 @@
+@import '../../styles/import';
+
+$login-prefix: #{$prefix}-login;
+
+.#{$login-prefix} {
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    width: 100%;
+    min-width: 100vh;
+    min-height: 100vh;
+    background: rgba(246, 248, 250, 1);
+
+    &-container {
+        padding-top: 200px;
+        margin: 0 auto 100px;
+        width: 380px;
+    }
+
+    &-header {
+        text-align: center;
+
+        &-logo {
+            max-width: 100%;
+        }
+
+        &-title {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            color: #999;
+            margin: 20px auto 30px;
+        }
+    }
+
+    &-main {
+        position: relative;
+        width: 380px;
+        // height: 497px;
+        padding: 40px 30px 20px;
+        background: #fff;
+        box-shadow: 0px 0px 60px 0px rgba(0, 45, 90, 0.08);
+        border-radius: 8px;
+
+        .ant-tabs-nav-scroll {
+            display: flex;
+            justify-content: center;
+        }
+
+        .ant-tabs-nav .ant-tabs-tab {
+            margin: 0 30px;
+        }
+    }
+
+    // &-qr-code {
+    //     position: absolute;
+    //     right: 10px;
+    //     top: 10px;
+    //     display: block;
+    //     cursor: pointer;
+    //     width: 50px;
+    //     height: 50px;
+    //     background: url('../../../res/qrcode.png') no-repeat center;
+    // }
+
+    &-extra {
+        text-align: right;
+
+        a {
+            color: #999;
+            font-size: 14px;
+        }
+    }
+}

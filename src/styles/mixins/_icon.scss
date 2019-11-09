@@ -1,0 +1,15 @@
+@mixin icon($height: 16px) {
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: $height;
+  vertical-align: middle;
+  width: $height;
+}
+
+@mixin icon-user($core-header-user-img-width) {
+  background-color: $color-ddd;
+  color: $color-white;
+  height: $core-header-user-img-width;
+  width: $core-header-user-img-width;
+}

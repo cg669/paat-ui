@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+/* stylelint-disable selector-no-vendor-prefix */
+::-webkit-input-placeholder {
+  color: $theme-color-font-secondary;
+}
+/* stylelint-enable */
+
+html {
+  background: #f1f1f1;
+  color: $theme-color-font-primary;
+  font: 14px/1.5 Helvetica, Tahoma, Arial, -apple-system, 'PingFang Fc', 'Microsoft YaHei', SimSun;
+}
+
+a {
+  color: $theme-color-font-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ul,
+li,
+dl,
+dd {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 4px 10px;
+}
+
+p {
+  margin: 0;
+}
+
+input,
+textarea,
+button,
+select {
+  outline: none;
+  user-select: none;
+}
+
+@import './base/index';
