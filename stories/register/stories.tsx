@@ -50,3 +50,12 @@ storiesOf('注册/忘记密码', module)
     submit={submit}
     isRegister={false}
   />)
+  .add('绑定手机号', () => <Register
+    logo={'https://fileserver.paat.com/13f/13f9ca1e7f8b84a725a57550a395cf35.png'}
+    title='我是忘记密码'
+    sendCode={sendCode}
+    extraBtn={<a>重置密码</a>}
+    submit={submit}
+    isBindTel={true}
+    isRegister={false}
+  />)
