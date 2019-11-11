@@ -39,6 +39,8 @@ storiesOf('登录', module)
     title='我是标题'
     login={login}
     sendCode={sendCode}
+    weChatLogin={<div style={{ width: 190, height: 190, textAlign: 'center', margin: '0 auto', border: '1px solid #000' }}>我是微信登录</div>}
+    otherLogin={<a>我是其他登录</a>}
   />)
   .add('单个', () => <Login
     logo={'https://fileserver.paat.com/13f/13f9ca1e7f8b84a725a57550a395cf35.png'}

@@ -56,16 +56,21 @@ $login-prefix: #{$prefix}-login;
         }
     }
 
-    // &-qr-code {
-    //     position: absolute;
-    //     right: 10px;
-    //     top: 10px;
-    //     display: block;
-    //     cursor: pointer;
-    //     width: 50px;
-    //     height: 50px;
-    //     background: url('../../../res/qrcode.png') no-repeat center;
-    // }
+    &-qr-code {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        display: block;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        background: url('../../res/qrcode.png') no-repeat center;
+        background-size: cover;
+    }
+
+    &-qr-customer {
+        background-image: url('../../res/customer.png');
+    }
 
     &-extra {
         text-align: right;
@@ -73,6 +78,21 @@ $login-prefix: #{$prefix}-login;
         a {
             color: #999;
             font-size: 14px;
+        }
+    }
+
+    &-wechat,
+    &-customer {
+        transition: all .4s;
+        overflow: hidden;
+        background: #fff;
+        height: 0;
+        opacity: 0;
+
+        &-show {
+            height: auto;
+            overflow: auto;
+            opacity: 1;
         }
     }
 }
