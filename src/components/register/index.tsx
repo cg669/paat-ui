@@ -21,6 +21,7 @@ export interface IRegisterProps {
     footerInfo?: IFooterProp
     extraBtn?: React.ReactNode
     isRegister?: boolean
+    isBindTel?: boolean
     sendCode: (tel: string) => void
     submit: (val: IRegister) => void
 }
@@ -40,6 +41,7 @@ function RegisterItem(props: IRegisterFormProps) {
         form,
         sendCode,
         isRegister = true,
+        isBindTel = false,
         submit
     } = props
 
@@ -121,37 +123,43 @@ function RegisterItem(props: IRegisterFormProps) {
                             }
                             <div className='nm-register-img-code'><Button type='link' onClick={handleSendCode}>{isRunning ? `${num}s` : '获取验证码'}</Button></div>
                         </Form.Item>
-                        <Form.Item required={true}>
-                            {
-                                getFieldDecorator('psd', {
-                                    rules: [
+                        {
+                            !isBindTel && (
+                                <>
+                                    <Form.Item required={true}>
                                         {
-                                            message: '请输入密码', required: true, whitespace: true
-                                        },
-                                        {
-                                            message: '请输入6-16位密码，区分大小写',
-                                            min: 6,
-                                            // tslint:disable-next-line:object-literal-sort-keys
-                                            max: 16,
+                                            getFieldDecorator('psd', {
+                                                rules: [
+                                                    {
+                                                        message: '请输入密码', required: true, whitespace: true
+                                                    },
+                                                    {
+                                                        message: '请输入6-16位密码，区分大小写',
+                                                        min: 6,
+                                                        // tslint:disable-next-line:object-literal-sort-keys
+                                                        max: 16,
+                                                    }
+                                                ]
+                                            })(<Input.Password placeholder={isRegister ? '请输入6-16位密码，区分大小写' : '请输入新密码(请输入6-16位密码，区分大小写)'} />)
                                         }
-                                    ]
-                                })(<Input.Password placeholder={isRegister ? '请输入6-16位密码，区分大小写' : '请输入新密码(请输入6-16位密码，区分大小写)'} />)
-                            }
-                        </Form.Item>
-                        <Form.Item required={true}>
-                            {
-                                getFieldDecorator('confirmPsd', {
-                                    rules: [
+                                    </Form.Item>
+                                    <Form.Item required={true}>
                                         {
-                                            message: '请输入确认密码', required: true, whitespace: true
-                                        },
-                                        {
-                                            validator: checkConfirmPsd
+                                            getFieldDecorator('confirmPsd', {
+                                                rules: [
+                                                    {
+                                                        message: '请输入确认密码', required: true, whitespace: true
+                                                    },
+                                                    {
+                                                        validator: checkConfirmPsd
+                                                    }
+                                                ]
+                                            })(<Input.Password placeholder='请输入确认密码' />)
                                         }
-                                    ]
-                                })(<Input.Password placeholder='请输入确认密码' />)
-                            }
-                        </Form.Item>
+                                    </Form.Item>
+                                </>
+                            )
+                        }
                         <Form.Item style={{ marginBottom: 18 }}>
                             <Button
                                 type='primary'
@@ -160,7 +168,9 @@ function RegisterItem(props: IRegisterFormProps) {
                                 onClick={handleSubmit}
                             >
                                 {
-                                    isRegister ? '注册' : '确认修改'
+                                    isBindTel ? '确定' : (
+                                        isRegister ? '注册' : '确认修改'
+                                    )
                                 }
                             </Button>
                         </Form.Item>

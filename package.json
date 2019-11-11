@@ -1,6 +1,6 @@
 {
   "name": "paat-ui",
-  "version": "0.1.7",
+  "version": "0.1.10",
   "main": "./dist/paat-ui.min.js",
   "dependencies": {
     "normalize.css": "^8.0.1",
@@ -20,6 +20,9 @@
     "deploy": "webpack --config webpack.config.js"
   },
   "devDependencies": {
+    "antd": "^3.24.3",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
     "@babel/core": "^7.6.4",
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.6.3",
@@ -68,6 +71,7 @@
     "ts-loader": "^6.2.1",
     "typescript": "^3.6.4",
     "url-loader": "^0.5.9",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   }
 }

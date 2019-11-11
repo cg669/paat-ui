@@ -15,6 +15,10 @@ import { ImgCodeProvider } from '../../hooks'
 
 import Footer, { IFooterProp } from '../footer'
 
+import classnames from 'classnames'
+
+const { useState } = React
+
 const { TabPane } = Tabs
 
 import './index.scss'
@@ -35,8 +39,27 @@ export interface ILoginProps {
     otherLogin?: React.ReactNode
     footerInfo?: IFooterProp
     loginType?: ILoginType[]
+    weChatLogin?: React.ReactNode
     login: (val: ILoginFormValue) => void
     sendCode: (tel: string) => void
+}
+export interface IWechatLogin {
+    children: React.ReactNode
+    isWechat: boolean
+}
+function WechatLogin(props: IWechatLogin) {
+    const { children, isWechat = false } = props
+    return (
+        <div className={classnames('nm-login-wechat', {
+            'nm-login-wechat-show': isWechat
+        })} >
+            <Tabs>
+                <TabPane tab="微信二维码登录" key="wechat">
+                    {children}
+                </TabPane>
+            </Tabs>
+        </div>
+    )
 }
 function Login(props: ILoginProps) {
     const {
@@ -48,7 +71,8 @@ function Login(props: ILoginProps) {
         loginType = ['tel', 'psd'],
         sendCode,
         footerInfo,
-        otherLogin
+        otherLogin,
+        weChatLogin = null
     } = props
     const logoImg = typeof logo === 'string' ? <img src={logo} /> : logo
     const childProps: ILoginChildProps = {
@@ -57,6 +81,8 @@ function Login(props: ILoginProps) {
         login,
         sendCode,
     }
+    const [isWechat, setWechat] = useState(false)
+    const handleWechat = () => setWechat(!isWechat)
     return (
         <div className='nm-login'>
             <div className='nm-login-container'>
@@ -67,23 +93,36 @@ function Login(props: ILoginProps) {
                     }
                 </div>
                 <div className='nm-login-main'>
-                    {/* <i className='nm-login-qr-code' /> */}
-                    <Tabs defaultActiveKey={loginType[0]}>
-                        {
-                            loginType.indexOf('tel') > -1 && (
-                                <TabPane tab="手机号登录" key="tel">
-                                    <ImgCodeProvider><LoginByTel {...childProps} /></ImgCodeProvider>
-                                </TabPane>
-                            )
-                        }
-                        {
-                            loginType.indexOf('psd') > -1 && (
-                                <TabPane tab="账号登录" key="psd">
-                                    <LoginByPsd {...childProps} />
-                                </TabPane>
-                            )
-                        }
-                    </Tabs>
+                    {
+                        !!weChatLogin && (
+                            <>
+                                <i className={classnames('nm-login-qr-code', {
+                                    'nm-login-qr-customer': isWechat
+                                })} onClick={handleWechat} />
+                                <WechatLogin isWechat={isWechat}>{weChatLogin}</WechatLogin>
+                            </>
+                        )
+                    }
+                    <div className={classnames('nm-login-customer', {
+                        'nm-login-customer-show': !isWechat
+                    })}>
+                        <Tabs defaultActiveKey={loginType[0]}>
+                            {
+                                loginType.indexOf('tel') > -1 && (
+                                    <TabPane tab="手机号登录" key="tel">
+                                        <ImgCodeProvider><LoginByTel {...childProps} /></ImgCodeProvider>
+                                    </TabPane>
+                                )
+                            }
+                            {
+                                loginType.indexOf('psd') > -1 && (
+                                    <TabPane tab="账号登录" key="psd">
+                                        <LoginByPsd {...childProps} />
+                                    </TabPane>
+                                )
+                            }
+                        </Tabs>
+                    </div>
                     {otherLogin}
                 </div>
             </div>

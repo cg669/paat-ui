@@ -23,8 +23,16 @@ storiesOf('注册/忘记密码', module)
       // Show readme before story
       sidebar: `| 参数 | 说明 | 类型 | 默认值 |
       | --- | --- | --- | --- |
-      | src | icon的图标地址 | any | - |
-      | size | 大小 | sm md lg file | sm |`
+      | logo | logo地址 | string或者reactNode | - |
+      | title | 小标题 |string | - |
+      | submit | 提交请求函数以及后续操作 | 函数（含有参数） | - |
+      | sendCode | 发送验证码请求函数以及后续操作 | 函数（含有参数） | - |
+      | loginType | 登录方式 | 数组 | ['psd','tel'] |
+      | otherLogin | 其他登录方式 | ReactNode | - |
+      | loading | 按钮loading | boolean | - |
+      | isRegister | 是否注册 | boolean | true |
+      | extraBtn | 其他小按钮 | ReactNode | - |
+      `
     },
   })
   .add('注册', () => <Register
@@ -40,5 +48,14 @@ storiesOf('注册/忘记密码', module)
     sendCode={sendCode}
     extraBtn={<a>重置密码</a>}
     submit={submit}
+    isRegister={false}
+  />)
+  .add('绑定手机号', () => <Register
+    logo={'https://fileserver.paat.com/13f/13f9ca1e7f8b84a725a57550a395cf35.png'}
+    title='我是忘记密码'
+    sendCode={sendCode}
+    extraBtn={<a>重置密码</a>}
+    submit={submit}
+    isBindTel={true}
     isRegister={false}
   />)
