@@ -76,7 +76,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              context: './',
+              context: './res',
               hash: 'sha512',
               digest: 'hex',
               name: 'res/[hash].[ext]',
