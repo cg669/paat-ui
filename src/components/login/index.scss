@@ -52,7 +52,37 @@ $login-prefix: #{$prefix}-login;
         }
 
         .ant-tabs-nav .ant-tabs-tab {
-            margin: 0 30px;
+            position: relative;
+            margin: 0 20px;
+            transition: all .3s;
+            font-size: 16px;
+            font-weight: 400;
+            color: #666;
+
+            &::after {
+                content: '';
+                display: block;
+                position: relative;
+                top: 10px;
+                margin: 0 auto;
+                width: 50px;
+                height: 2px;
+                background: #333;
+                visibility: hidden;
+            }
+        }
+
+        .ant-tabs-nav .ant-tabs-tab-active {
+            color: #333;
+            font-weight: 600;
+
+            &::after {
+                visibility: visible;
+            }
+        }
+
+        .ant-tabs-ink-bar {
+            display: none !important;
         }
     }
 
