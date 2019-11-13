@@ -71,6 +71,21 @@ module.exports = {
         ],
       },
       {
+        test: /\.less$/,
+        loaders: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "less-loader",
+            options: {
+              modifyVars: { "@primary-color": "#d8df19" },
+              javascriptEnabled: true
+            }
+          }
+        ],
+        include: /src/,
+      },
+      {
         test: /\.(jpe?g|png|gif)$/i,
         use: [
           {
