@@ -54,7 +54,7 @@ function WechatLogin(props: IWechatLogin) {
             'nm-login-wechat-show': isWechat
         })} >
             <Tabs>
-                <TabPane tab="微信二维码登录" key="wechat">
+                <TabPane tab="企业微信二维码登录" key="wechat">
                     {children}
                 </TabPane>
             </Tabs>
