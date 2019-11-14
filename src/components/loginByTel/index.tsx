@@ -14,7 +14,11 @@ import { ILoginFormValue } from '../../interfaces'
 
 import { useImgCode } from '../../hooks'
 
+import { useForm } from '../../hooks/useForm'
+
 import useCountDown from "../../hooks/useCountDown"
+
+const { useMemo } = React
 
 interface ILoginByTel extends FormComponentProps {
     login: (val: ILoginFormValue) => void
@@ -40,6 +44,16 @@ function LoginByTel(props: ILoginByTel) {
         getFieldDecorator,
         validateFields
     } = form
+
+    const { telForm, setTelForm } = useForm() as any || {}
+
+    useMemo(() => {
+        if (!telForm && setTelForm) {
+            setTelForm(form)
+        }
+    }, [form, setTelForm, telForm])
+    // setPsdForm(form)
+
     const checkImgCode = (rule: any, value: any, callback: any) => {
         if (!value) {
             callback()
@@ -112,7 +126,7 @@ function LoginByTel(props: ILoginByTel) {
                         ]
                     })(<Input placeholder='请输入手机验证码' />)
                 }
-                <div className='nm-login-by-tel-img-code'><Button type='link' onClick={handleSendCode}>{isRunning ? `${num}s` : '获取验证码'}</Button></div>
+                <div className='nm-login-by-tel-img-code'><Button type='link' style={{ fontSize: 14 }} onClick={handleSendCode}>{isRunning ? `${num}s` : '获取验证码'}</Button></div>
             </Form.Item>
             <Form.Item style={{ marginBottom: 18 }}>
                 <Button

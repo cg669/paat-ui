@@ -6,9 +6,13 @@ import { FormComponentProps } from 'antd/lib/form'
 
 import { MobileReg } from '../../utils/validators'
 
+import { useForm } from '../../hooks/useForm'
+
 import './index.scss'
 
 import { ILoginFormValue } from '../../interfaces'
+
+const { useMemo } = React
 
 
 interface ILoginByPsd extends FormComponentProps {
@@ -30,6 +34,14 @@ function LoginByPsd(props: ILoginByPsd) {
         getFieldDecorator,
         validateFields
     } = form
+
+    const { psdForm, setPsdForm } = useForm() as any || {}
+
+    useMemo(() => {
+        if (!psdForm && setPsdForm) {
+            setPsdForm(form)
+        }
+    }, [form, setPsdForm, psdForm])
 
     const save = () => {
         validateFields((err, values) => {
@@ -84,7 +96,9 @@ function LoginByPsd(props: ILoginByPsd) {
             <Form.Item>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     {
-                        getFieldDecorator('isRemember')(<Checkbox>记住密码</Checkbox>)
+                        getFieldDecorator('isRemember', {
+                            valuePropName: 'checked'
+                        })(<Checkbox >记住密码</Checkbox>)
                     }
                     {extraBtn && <div className='nm-login-extra'>{extraBtn}</div>}
                 </div>

@@ -41,7 +41,7 @@ $login-prefix: #{$prefix}-login;
         position: relative;
         width: 380px;
         // height: 497px;
-        padding: 28px 30px 20px;
+        padding: 16px 30px 20px;
         background: #fff;
         box-shadow: 0px 0px 60px 0px rgba(0, 45, 90, 0.08);
         border-radius: 8px;
@@ -49,6 +49,10 @@ $login-prefix: #{$prefix}-login;
         .ant-tabs-nav-scroll {
             display: flex;
             justify-content: center;
+        }
+
+        .ant-tabs-bar {
+            margin: 0 0 26px 0
         }
 
         .ant-tabs-nav .ant-tabs-tab {

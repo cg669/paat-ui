@@ -13,6 +13,9 @@ import { ILoginFormValue } from '../../interfaces'
 
 import { ImgCodeProvider } from '../../hooks'
 
+// import { FormProvider } from '../../hooks/useForm'
+import { useForm } from '../../hooks/useForm'
+
 import Footer, { IFooterProp } from '../footer'
 
 import classnames from 'classnames'
@@ -82,6 +85,8 @@ function Login(props: ILoginProps) {
         sendCode,
     }
     const [isWechat, setWechat] = useState(false)
+    const { setState } = useForm() as any || {}
+    const changeTab = (val: string) => setState(val)
     const handleWechat = () => setWechat(!isWechat)
     return (
         <div className='nm-login'>
@@ -106,7 +111,7 @@ function Login(props: ILoginProps) {
                     <div className={classnames('nm-login-customer', {
                         'nm-login-customer-show': !isWechat
                     })}>
-                        <Tabs defaultActiveKey={loginType[0]}>
+                        <Tabs defaultActiveKey={loginType[0]} onChange={changeTab}>
                             {
                                 loginType.indexOf('tel') > -1 && (
                                     <TabPane tab="手机号登录" key="tel">
