@@ -123,10 +123,18 @@ $login-prefix: #{$prefix}-login;
         height: 0;
         opacity: 0;
 
+        iframe {
+            display: none;
+        }
+
         &-show {
             height: auto;
             overflow: auto;
             opacity: 1;
+
+            iframe {
+                display: block;
+            }
         }
     }
 }

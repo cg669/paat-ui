@@ -4,7 +4,7 @@
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-import { Login, useForm, FormProvider } from '../../index'
+import { FormProvider, Login, useForm } from '../../index'
 
 function login(val: any) {
   // tslint:disable-next-line:no-console
@@ -35,9 +35,7 @@ storiesOf('登录', module)
   .addParameters({
     readme: {
       // Show readme before story
-      sidebar: `
-      ## 使用FormProvider包括组件可以用useForm获取当前显示的form,请使用useForm里面的state来判断formItem是否实例化
-      | 参数 | 说明 | 类型 | 默认值 |
+      sidebar: `| 参数 | 说明 | 类型 | 默认值 |
       | --- | --- | --- | --- |
       | logo | logo地址 | string或者reactNode | - |
       | title | 小标题 |string | - |
@@ -47,8 +45,11 @@ storiesOf('登录', module)
       | otherLogin | 其他登录方式 | ReactNode | - |
       | extraBtn | 其他小按钮 | ReactNode | - |
       | loading | 按钮loading | boolean | - |
+
+      使用FormProvider包括组件可以用useForm获取当前显示的form,请使用useForm里面的state来判断formItem是否实例化
       `
     },
+
   })
   .add('常用', () => <FormProvider><Test /></FormProvider>)
   .add('单个', () => <Login
