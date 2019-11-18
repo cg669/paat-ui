@@ -60,7 +60,7 @@ function WechatLogin(props: IWechatLogin) {
             'nm-login-wechat-show': isWechat
         })} >
             <Tabs>
-                <TabPane tab="扫码登录" key="wechat">
+                <TabPane tab="企业微信" key="wechat">
                     {children}
                 </TabPane>
             </Tabs>
@@ -119,14 +119,14 @@ function Login(props: ILoginProps) {
                         <Tabs defaultActiveKey={loginType[0]} onChange={changeTab}>
                             {
                                 loginType.indexOf('tel') > -1 && (
-                                    <TabPane tab="手机号登录" key="tel">
+                                    <TabPane tab="手机号" key="tel">
                                         <ImgCodeProvider><LoginByTel {...childProps} /></ImgCodeProvider>
                                     </TabPane>
                                 )
                             }
                             {
                                 loginType.indexOf('psd') > -1 && (
-                                    <TabPane tab="账号登录" key="psd">
+                                    <TabPane tab="账号" key="psd">
                                         <LoginByPsd {...childProps} />
                                     </TabPane>
                                 )
