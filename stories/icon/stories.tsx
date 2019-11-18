@@ -92,6 +92,8 @@ shu-down.svg
 shu-up.svg
 information-line.svg
 folder-full.svg
+computer.svg
+wxcode.svg
 `
 
 const svgs = allRes.split('\n').filter(x => x.includes('svg'))

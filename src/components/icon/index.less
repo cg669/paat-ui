@@ -1,10 +1,13 @@
-@import '../../styles/import';
+@primary-color: #1890ff;
 
-$icon-prefix: #{$prefix}-icon;
 
-.#{$icon-prefix} {
+@icon-prefix: ~'nm-icon';
+
+.@{icon-prefix} {
     background-size: cover;
     fill: currentColor;
+
+    color: @primary-color;
 
     &-sm {
         height: 12px;

@@ -12,12 +12,16 @@ $login-prefix: #{$prefix}-login;
     width: 100%;
     width: 100%;
     min-width: 100vh;
-    min-height: 100vh;
+    min-height: 640px;
     background: rgba(246, 248, 250, 1);
 
     &-container {
-        padding-top: 200px;
-        margin: 0 auto 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0;
+        margin: 0;
         width: 380px;
     }
 
@@ -98,13 +102,16 @@ $login-prefix: #{$prefix}-login;
         cursor: pointer;
         width: 50px;
         height: 50px;
-        background: url('https://fileserver.paat.com/410/410cd7de40257b76ed8004b74dd8f74a.png') no-repeat center;
-        background-size: cover;
+        z-index: $zindex-back-top;
+
+        // background: url('https://fileserver.paat.com/410/410cd7de40257b76ed8004b74dd8f74a.png') no-repeat center;
+        // background-size: cover;
+
     }
 
-    &-qr-customer {
-        background-image: url('https://fileserver.paat.com/7f3/7f355c45b45406ff77eb3afb792e0823.png');
-    }
+    // &-qr-customer {
+    //     background-image: url('https://fileserver.paat.com/7f3/7f355c45b45406ff77eb3afb792e0823.png');
+    // }
 
     &-extra {
         text-align: right;

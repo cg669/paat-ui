@@ -18,6 +18,8 @@ import { useForm } from '../../hooks/useForm'
 
 import Footer, { IFooterProp } from '../footer'
 
+import Icon from '../icon'
+
 import classnames from 'classnames'
 
 const { useState } = React
@@ -50,6 +52,7 @@ export interface IWechatLogin {
     children: React.ReactNode
     isWechat: boolean
 }
+
 function WechatLogin(props: IWechatLogin) {
     const { children, isWechat = false } = props
     return (
@@ -57,7 +60,7 @@ function WechatLogin(props: IWechatLogin) {
             'nm-login-wechat-show': isWechat
         })} >
             <Tabs>
-                <TabPane tab="企业微信二维码登录" key="wechat">
+                <TabPane tab="扫码登录" key="wechat">
                     {children}
                 </TabPane>
             </Tabs>
@@ -103,7 +106,9 @@ function Login(props: ILoginProps) {
                             <>
                                 <i className={classnames('nm-login-qr-code', {
                                     'nm-login-qr-customer': isWechat
-                                })} onClick={handleWechat} />
+                                })} onClick={handleWechat} >
+                                    <Icon src={isWechat ? 'computer' : 'wxcode'} style={{ width: 50, height: 50 }} />
+                                </i>
                                 <WechatLogin isWechat={isWechat}>{weChatLogin}</WechatLogin>
                             </>
                         )

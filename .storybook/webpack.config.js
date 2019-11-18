@@ -57,7 +57,7 @@ module.exports = {
                         loader: 'sass-loader',
                         options: {
                             sourceMap: true,
-                            data: `@import './src/styles/theme.scss';`,
+                            data: `@import './src/styles/theme.scss';`
                         },
                     },
                 ],

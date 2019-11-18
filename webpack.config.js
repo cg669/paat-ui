@@ -75,13 +75,7 @@ module.exports = {
         loaders: [
           "style-loader",
           "css-loader",
-          {
-            loader: "less-loader",
-            options: {
-              modifyVars: { "@primary-color": "#d8df19" },
-              javascriptEnabled: true
-            }
-          }
+          "less-loader"
         ],
         include: /src/,
       },
