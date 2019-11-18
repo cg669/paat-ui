@@ -1,6 +1,6 @@
 {
   "name": "paat-ui",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "main": "./dist/paat-ui.min.js",
   "dependencies": {
     "normalize.css": "^8.0.1",
