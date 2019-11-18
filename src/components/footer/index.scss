@@ -32,6 +32,7 @@ $footer-prefix: #{$prefix}-footer;
 
 @media (max-height: 650px) {
     .#{$footer-prefix} {
-        display: none;
+        position: static;
+        margin-top: 20px;
     }
 }

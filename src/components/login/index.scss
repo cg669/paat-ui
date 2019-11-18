@@ -25,6 +25,7 @@ $login-prefix: #{$prefix}-login;
         width: 380px;
     }
 
+
     &-header {
         text-align: center;
 
@@ -142,6 +143,17 @@ $login-prefix: #{$prefix}-login;
             iframe {
                 display: block;
             }
+        }
+    }
+}
+
+@media (max-height: 650px) {
+    .#{$login-prefix} {
+        &-container {
+            position: static;
+            transform: none;
+            margin: 0 auto;
+            width: 380px;
         }
     }
 }

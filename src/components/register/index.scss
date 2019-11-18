@@ -25,6 +25,7 @@ $register-prefix: #{$prefix}-register;
         width: 380px;
     }
 
+
     &-header {
         text-align: center;
 
@@ -111,6 +112,17 @@ $register-prefix: #{$prefix}-register;
         .ant-input:focus,
         .ant-input-password:focus {
             box-shadow: none !important;
+        }
+    }
+}
+
+@media (max-height: 650px) {
+    .#{$register-prefix} {
+        &-container {
+            position: static;
+            transform: none;
+            margin: 0 auto;
+            width: 380px;
         }
     }
 }
