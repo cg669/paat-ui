@@ -10,9 +10,7 @@ $register-prefix: #{$prefix}-register;
     right: 0;
     bottom: 0;
     width: 100%;
-    width: 100%;
-    min-width: 100vh;
-    min-height: 100vh;
+    height: 100%;
     background: rgba(246, 248, 250, 1);
 
     &-container {
