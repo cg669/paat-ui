@@ -28,6 +28,9 @@ const { TabPane } = Tabs
 
 import './index.scss'
 
+import safeImg from '../../../res/safe.png'
+import shandianImg from '../../../res/shandian.png'
+
 export type ILoginType = 'tel' | 'psd'
 export interface ILoginChildProps extends FormProps {
     login: (val: ILoginFormValue) => void
@@ -53,6 +56,20 @@ export interface IWechatLogin {
     isWechat: boolean
 }
 
+const ExtraBtn = () => (
+    <div className='nm-login-extra-default'>
+        <a
+        >
+            <img src={safeImg} width='50' className='nm-login-extra-default-icon' />
+            更快捷
+        </a>
+        <a>
+            <img src={shandianImg} className='nm-login-extra-default-icon' />
+            更安全
+        </a>
+    </div>
+)
+
 function WechatLogin(props: IWechatLogin) {
     const { children, isWechat = false } = props
     return (
@@ -72,7 +89,7 @@ function Login(props: ILoginProps) {
         loading = false,
         logo,
         title,
-        extraBtn,
+        extraBtn = <ExtraBtn />,
         login,
         loginType = ['tel', 'psd'],
         sendCode,

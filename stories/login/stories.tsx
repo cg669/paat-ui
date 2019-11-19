@@ -26,7 +26,6 @@ function Test() {
       login={login}
       sendCode={sendCode}
       weChatLogin={<div style={{ width: 190, height: 190, textAlign: 'center', margin: '0 auto', border: '1px solid #000' }}>我是微信登录</div>}
-      otherLogin={<a>我是其他登录</a>}
     />
   )
 }
@@ -64,5 +63,4 @@ storiesOf('登录', module)
     title='我是标题'
     login={login}
     sendCode={sendCode}
-    otherLogin={<a>我是其他登录</a>}
   />)

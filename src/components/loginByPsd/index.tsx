@@ -100,8 +100,10 @@ function LoginByPsd(props: ILoginByPsd) {
                             valuePropName: 'checked'
                         })(<Checkbox >记住密码</Checkbox>)
                     }
-                    {extraBtn && <div className='nm-login-extra'>{extraBtn}</div>}
                 </div>
+            </Form.Item>
+            <Form.Item>
+                {extraBtn && <div className='nm-login-extra'>{extraBtn}</div>}
             </Form.Item>
         </Form>
     )
