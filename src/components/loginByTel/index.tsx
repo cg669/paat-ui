@@ -128,7 +128,7 @@ function LoginByTel(props: ILoginByTel) {
                 }
                 <div className='nm-login-by-tel-img-code'><Button type='link' style={{ fontSize: 14 }} onClick={handleSendCode}>{isRunning ? `${num}s` : '获取验证码'}</Button></div>
             </Form.Item>
-            <Form.Item style={{ marginBottom: 18 }}>
+            <Form.Item style={{ marginBottom: 10 }}>
                 <Button
                     type='primary'
                     className='nm-login-by-tel-btn'

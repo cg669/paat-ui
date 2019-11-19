@@ -93,7 +93,7 @@ function LoginByPsd(props: ILoginByPsd) {
                     登录
                 </Button>
             </Form.Item>
-            <Form.Item>
+            <Form.Item style={{ marginBottom: 10 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     {
                         getFieldDecorator('isRemember', {
