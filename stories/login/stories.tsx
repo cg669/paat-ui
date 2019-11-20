@@ -57,6 +57,7 @@ storiesOf('登录', module)
     login={login}
     sendCode={sendCode}
     loginType={['psd']}
+    extraBtn={''}
   />)
   .add('增加其他登录', () => <Login
     logo={'https://fileserver.paat.com/13f/13f9ca1e7f8b84a725a57550a395cf35.png'}
