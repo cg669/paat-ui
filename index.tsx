@@ -1,7 +1,5 @@
 import './src/styles'
 
-import 'antd/es/tabs/style/css'  //  因为tab样式的问题
-
 import { ImgCodeProvider, useImgCode } from './src/hooks'
 
 export { ImgCodeProvider }
