@@ -24,6 +24,7 @@ interface ILoginByTel extends FormComponentProps {
     login: (val: ILoginFormValue) => void
     sendCode: (tel: string) => void
     extraBtn?: React.ReactNode
+    otherLogin?: React.ReactNode
     loading?: boolean
 }
 

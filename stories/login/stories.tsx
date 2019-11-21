@@ -25,6 +25,7 @@ function Test() {
       title='我是标题'
       login={login}
       sendCode={sendCode}
+      otherLogin={<a>我是其他</a>}
       weChatLogin={<div style={{ width: 190, height: 190, textAlign: 'center', margin: '0 auto', border: '1px solid #000' }}>我是微信登录</div>}
     />
   )
@@ -41,8 +42,8 @@ storiesOf('登录', module)
       | login | 登录请求函数以及后续操作 | 函数（含有参数） | - |
       | sendCode | 发送验证码请求函数以及后续操作 | 函数（含有参数） | - |
       | loginType | 登录方式 | 数组 | ['psd','tel'] |
-      | otherLogin | 其他登录方式 | ReactNode | - |
-      | extraBtn | 其他小按钮 | ReactNode | - |
+      | extraBtn  | 其他登录方式 | ReactNode | - |
+      | otherLogin | 其他小按钮 | ReactNode | - |
       | loading | 按钮loading | boolean | - |
 
       使用FormProvider包括组件可以用useForm获取当前显示的form,请使用useForm里面的state来判断formItem是否实例化

@@ -19,6 +19,7 @@ interface ILoginByPsd extends FormComponentProps {
     login: (val: ILoginFormValue) => void
     sendCode?: (tel: string) => void
     extraBtn?: React.ReactNode
+    otherLogin?: React.ReactNode
     loading?: boolean
 }
 
@@ -29,6 +30,7 @@ function LoginByPsd(props: ILoginByPsd) {
         loading,
         login,
         extraBtn,
+        otherLogin
     } = props
     const {
         getFieldDecorator,
@@ -99,6 +101,9 @@ function LoginByPsd(props: ILoginByPsd) {
                         getFieldDecorator('isRemember', {
                             valuePropName: 'checked'
                         })(<Checkbox >记住密码</Checkbox>)
+                    }
+                    {
+                        otherLogin
                     }
                 </div>
             </Form.Item>
