@@ -1,0 +1,18 @@
+@import '../../styles/import';
+
+$login-prefix: #{$prefix}-advanced-search-form;
+
+.#{$login-prefix} {
+    .ant-form-item {
+        display: flex;
+    }
+
+    .ant-form-item-label {
+        min-width: 100px;
+    }
+
+    .ant-form-item-control-wrapper {
+        flex: 1;
+
+    }
+}

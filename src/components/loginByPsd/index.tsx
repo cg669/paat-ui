@@ -4,7 +4,7 @@ import { Button, Checkbox, Form, Input } from 'antd'
 
 import { FormComponentProps } from 'antd/lib/form'
 
-import { MobileReg } from '../../utils/validators'
+// import { MobileReg } from '../../utils/validators'
 
 import { useForm } from '../../hooks/useForm'
 
@@ -59,13 +59,10 @@ function LoginByPsd(props: ILoginByPsd) {
                     getFieldDecorator('tel', {
                         rules: [
                             {
-                                message: '请输入电话', required: true, whitespace: true
+                                message: '请输入账号', required: true, whitespace: true
                             },
-                            {
-                                message: '电话格式错误', pattern: MobileReg,
-                            }
                         ]
-                    })(<Input placeholder='请输入手机号' />)
+                    })(<Input placeholder='请输入账号' />)
                 }
             </Form.Item>
             <Form.Item required={true}>

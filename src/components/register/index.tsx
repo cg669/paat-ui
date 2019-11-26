@@ -14,7 +14,7 @@ import { IRegister } from '../../interfaces'
 
 import "./index.scss"
 
-import 'antd/es/tabs/style/css'  //  因为tab样式的问题
+// import 'antd/es/tabs/style/css'  //  因为tab样式的问题
 
 export interface IRegisterProps {
     loading?: boolean
