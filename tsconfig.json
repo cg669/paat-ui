@@ -1,12 +1,17 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "target": "es2015",
+    "target": "es6",
     "lib": ["es6", "dom", "es2017"],
-    "jsx": "react",
+    "jsx": "preserve",
     "types": ["webpack-env", "node"],
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true
   },
   "exclude": ["__tests__"],
   "include": ["src/**/*", "typings/*"]
