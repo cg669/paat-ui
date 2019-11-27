@@ -19,11 +19,16 @@ static
 dist
 build
 src
+public
+stories
+build.js
 
 # other
 tsconfig.json
+tsconfig.prod.json
+tsconfig.test.json
 tslint.json
-typings
+
 
 # storybook
 .storybook/

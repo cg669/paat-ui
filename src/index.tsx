@@ -1,4 +1,3 @@
-import './styles'
 
 import { ImgCodeProvider, useImgCode } from './hooks'
 
