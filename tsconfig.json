@@ -3,15 +3,10 @@
     "moduleResolution": "node",
     "target": "es6",
     "lib": ["es6", "dom", "es2017"],
-    "jsx": "preserve",
+    "jsx": "react",
     "types": ["webpack-env", "node"],
-    "noUnusedParameters": true,
-    "noUnusedLocals": true,
-    "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "strictNullChecks": true,
-    "skipLibCheck": true
+    "experimentalDecorators": true
   },
   "exclude": ["__tests__"],
   "include": ["src/**/*", "typings/*"]

@@ -1,6 +1,6 @@
 {
   "name": "paat-ui",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "typings": "typings/index.d.ts",
@@ -12,6 +12,15 @@
     "antd": "^3.24.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
+  },
+  "babel": {
+    "presets": ["@babel/preset-env", "@babel/preset-react"],
+    "plugins": [
+      ["import", {
+        "libraryName": "antd",
+        "style": true
+      }]
+    ]
   },
   "scripts": {
     "build": "$(npm bin)/build-storybook -s public -c .storybook -o build",
