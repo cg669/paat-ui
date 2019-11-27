@@ -1,5 +1,6 @@
-import React, { createContext, useState, useContext } from 'react'
+import * as React from 'react'
 
+const { createContext, useContext, useState } = React
 
 
 //  验证码
@@ -19,6 +20,6 @@ export function useImgCode() {
 
 export function ImgCodeProvider({ children }) {
     const imgCodeValues = useImgCodeProvider()
-    return <ImgCodeContext.Provider value={imgCodeValues}>{children}</ImgCodeContext.Provider>
+    return <ImgCodeContext.Provider value={imgCodeValues}> {children} </ImgCodeContext.Provider>
 }
 

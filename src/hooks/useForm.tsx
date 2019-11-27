@@ -1,4 +1,6 @@
-import React, { useState, createContext, useContext } from 'react'
+import * as React from 'react'
+
+const { useState, createContext, useContext } = React
 
 const FormContext = createContext(null)
 

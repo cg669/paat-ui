@@ -70,7 +70,7 @@ module.exports = {
                     {
                         loader: "less-loader",
                         options: {
-                            modifyVars: { "@primary-color": "#d8df19" },
+                            modifyVars: { "@primary-color": "#ffa366" },
                             javascriptEnabled: true
                         }
                     }

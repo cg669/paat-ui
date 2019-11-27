@@ -3,9 +3,10 @@
 $icon-prefix: #{$prefix}-icon;
 
 
-.#{icon-prefix} {
+.#{$icon-prefix} {
     background-size: cover;
     fill: currentColor;
+    color: $color-orange-light;
 
     &-sm {
         height: 12px;
@@ -26,14 +27,19 @@ $icon-prefix: #{$prefix}-icon;
         height: 68px;
         width: 78px;
     }
+
+    &-polygon {
+        fill: none;
+        color: $color-orange-light;
+        stroke-width: 1.5
+    }
+
+    &-bold {
+        color:$color-orange-light;
+    }
 }
 
 .nm-sub-icon {
-    // color: @primary-3;
+    // color: $theme-color-secondary;
     opacity: 0.2;
-}
-
-.nm-icon-polygon {
-    fill: none;
-    stroke-width: 1.5
 }
