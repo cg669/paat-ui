@@ -1,11 +1,17 @@
+@import './base/index';
+
 * {
   box-sizing: border-box;
 }
+
+$theme-color-font-primary:#333;
+$theme-color-font-secondary: #666;
 
 /* stylelint-disable selector-no-vendor-prefix */
 ::-webkit-input-placeholder {
   color: $theme-color-font-secondary;
 }
+
 /* stylelint-enable */
 
 html {
@@ -58,5 +64,3 @@ select {
   outline: none;
   user-select: none;
 }
-
-@import './base/index';

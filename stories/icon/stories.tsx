@@ -4,7 +4,7 @@ import { color } from '@storybook/addon-knobs'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-import { Icon } from '../../index'
+import { Icon } from '../../src'
 import './stories.scss'
 
 

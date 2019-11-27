@@ -4,7 +4,7 @@
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-import { Register } from '../../index'
+import { Register } from '../../src'
 
 function sendCode(tel: string) {
   // tslint:disable-next-line:no-console

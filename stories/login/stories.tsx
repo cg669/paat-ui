@@ -4,7 +4,7 @@
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-import { FormProvider, Login, useForm } from '../../index'
+import { FormProvider, Login, useForm } from '../../src'
 
 function login(val: any) {
   // tslint:disable-next-line:no-console

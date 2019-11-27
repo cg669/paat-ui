@@ -1,7 +1,7 @@
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-import { Footer } from '../../index'
+import { Footer } from '../../src'
 
 storiesOf('页脚', module)
     .addDecorator(withKnobs)

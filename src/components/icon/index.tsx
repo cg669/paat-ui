@@ -1,7 +1,7 @@
 import classnames from 'classnames'
 import * as React from 'react'
 
-import './index.less'
+import './index.scss'
 
 // tslint:disable-next-line:interface-name
 export interface IconPropType {

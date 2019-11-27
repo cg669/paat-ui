@@ -1,12 +1,11 @@
-@import "~antd/lib/style/themes/default.less";
+@import '../../styles/import';
 
-@icon-prefix: ~'nm-icon';
+$icon-prefix: #{$prefix}-icon;
 
-.@{icon-prefix} {
+
+.#{icon-prefix} {
     background-size: cover;
     fill: currentColor;
-
-    color: @primary-color;
 
     &-sm {
         height: 12px;
@@ -36,10 +35,5 @@
 
 .nm-icon-polygon {
     fill: none;
-    stroke: @primary-7;
     stroke-width: 1.5
-}
-
-.nm-icon-bold {
-    color: @primary-7;
 }

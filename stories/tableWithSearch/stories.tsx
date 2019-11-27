@@ -4,7 +4,7 @@
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-import { TableWithSearch } from '../../index'
+import { TableWithSearch } from '../../src'
 
 
 const searchLoading = false;
