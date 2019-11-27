@@ -1,9 +1,5 @@
 
-import { ImgCodeProvider, useImgCode } from './hooks'
-
-export { ImgCodeProvider }
-
-export { useImgCode }
+export { ImgCodeProvider, useImgCode } from './hooks'
 
 export { default as useCountDown } from './hooks/useCountDown'
 

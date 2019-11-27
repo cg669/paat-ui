@@ -28,7 +28,8 @@ tsconfig.json
 tsconfig.prod.json
 tsconfig.test.json
 tslint.json
-
+images.d.ts
+.babelrc
 
 # storybook
 .storybook/
