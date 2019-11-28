@@ -16,7 +16,6 @@ lerna-debug.log
 
 # project
 static
-dist
 build
 src
 public

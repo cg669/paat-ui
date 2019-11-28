@@ -14,4 +14,5 @@ function del(dir) {
 del('lib')
 del('es6')
 del('typings')
+del('dist')
 
