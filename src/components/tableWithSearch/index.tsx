@@ -25,6 +25,8 @@ const TableWithSearch: React.SFC<ITableWithSearch> = (props: ITableWithSearch) =
         searchProps,
         tableProps
     } = props
+    // tslint:disable-next-line:no-console
+    console.log(searchProps, 'searchProps')
     return (
         <>
             <FormSearchField {...searchProps} />

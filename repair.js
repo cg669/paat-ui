@@ -57,7 +57,7 @@ function repair(src, reg1, reg2, replaceStr = '') {
 
 //  因为node-sass编译后并没有改变引入路径 所以写个脚本修复下
 repair('./es6/', /\.js(x?)$/, /index\.scss/, 'index.css');
-repair('./lib/', /\.js(x?)$/, /require\(\"\.\/index\.scss\"\)\;/);
+repair('./lib/', /\.js(x?)$/, /index\.scss/, 'index.css');
 
 
 
