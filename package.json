@@ -1,6 +1,6 @@
 {
   "name": "paat-ui",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "typings": "typings/index.d.ts",
@@ -32,7 +32,7 @@
     "eject": "react-scripts-ts eject",
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy": "node build.js && tsc -p ./ --outDir es6/ -d --declarationDir typings/ && babel es6 --out-dir lib && node-sass -r ./src/ -o es6&& node-sass -r ./src/ -o lib&& node repair.js && webpack --config webpack.config.js",
+    "deploy": "node build.js && tsc -p ./ --outDir es6/ -d --declarationDir typings/ && babel es6 --out-dir lib && node-sass -r ./src/ -o es6&& node-sass -r ./src/ -o lib&& node repair.js ",
     "deploy2": "node build.js && tsc -p ./ --outDir es6/ -d --declarationDir typings/ && babel es6 --out-dir lib && node-sass -r ./src/ -o es6&& node-sass -r ./src/ -o lib&& node repair.js ",
     "prepare": "npm run deploy"
   },

@@ -18,6 +18,7 @@ lerna-debug.log
 static
 build
 src
+dist
 public
 stories
 build.js
