@@ -1,5 +1,4 @@
 const fs = require('fs-extra')
-const path = require('path')
 function replaceFile(filePath, reg, replaceStr = '') {
     fs.readFile(filePath, function (err, data) {
         if (err) {
@@ -13,18 +12,16 @@ function replaceFile(filePath, reg, replaceStr = '') {
     })
 }
 
-// function changePath(filePath) {
-
-//     const targetPath = `${filePath.replace(/index\.css/g, '')}styles/`
-//     // console.log(path.resolve(filePath), 'filePath', targetPath)
-//     fs.move(filePath, targetPath, { overwrite: true }, function (err) {
-//         if (err) {
-//             console.log(err, '22!')
-//             return err;
-//         }
-//         console.log('success!')
-//     })
-// }
+function changePath(filePath, targetPath) {
+    // console.log(path.resolve(filePath), 'filePath', targetPath)
+    fs.copy(filePath, targetPath, function (err) {
+        if (err) {
+            console.log(err, '22!')
+            return err;
+        }
+        console.log('success!')
+    })
+}
 
 function repair(src, reg1, reg2, replaceStr = '') {
     fs.readdir(src, function (err, files) {
@@ -45,7 +42,7 @@ function repair(src, reg1, reg2, replaceStr = '') {
                         if (reg1 && item.match(reg1)) {
                             replaceFile(path, reg2, replaceStr);
                         }
-                    } else if (isDir && !path.match(/styles/)) {
+                    } else if (isDir) {
                         repair(`${path}/`, reg1, reg2, replaceStr)
                     }
                 });
@@ -59,5 +56,6 @@ function repair(src, reg1, reg2, replaceStr = '') {
 repair('./es6/', /\.js(x?)$/, /index\.scss/, 'index.css');
 repair('./lib/', /\.js(x?)$/, /index\.scss/, 'index.css');
 
-
+changePath('./src/res', './lib/res')
+changePath('./src/res', './es6/res')
 

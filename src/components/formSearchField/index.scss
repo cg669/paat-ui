@@ -3,6 +3,8 @@
 $login-prefix: #{$prefix}-advanced-search-form;
 
 .#{$login-prefix} {
+    margin-top: 20px;
+
     .ant-form-item {
         display: flex;
     }

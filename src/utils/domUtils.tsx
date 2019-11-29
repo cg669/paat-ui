@@ -24,22 +24,28 @@ export interface IFormItem {
 
 export function getFormItem(formItem: IFormItem): React.ReactNode {
 
-    const { type, data = [], placeholder = '请输入', ...rest } = formItem
+    const { type, data = [], placeholder = "请输入", ...rest } = formItem
 
     const domProps = {
-        placeholder: type === 'RangePicker' && typeof placeholder === 'string' ? ['初始时间', '结束时间'] : placeholder,
+        placeholder:
+            type === "RangePicker" && typeof placeholder === "string"
+                ? ["初始时间", "结束时间"]
+                : placeholder,
         ...rest
     }
 
-    if (type === 'Select') {
+    if (type === "Select") {
         return (
             <Select {...domProps}>
-                {
-                    data && data.map(item => <Select.Option value={item.value} key={item.value}>{item.label}</Select.Option>)
-                }
-            </Select >
+                {data &&
+                    data.map(item => (
+                        <Select.Option value={item.value} key={item.value}>
+                            {item.label}
+                        </Select.Option>
+                    ))}
+            </Select>
         )
     }
     const Ele = antdList[type]
-    return (<Ele {...domProps} />)
+    return <Ele {...domProps} />
 }

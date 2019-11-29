@@ -16,7 +16,7 @@ export interface IconPropType {
 
 
 const Icon: React.StatelessComponent<IconPropType> = ({ src, className, style, size = 'sm', ...restProps }) => {
-    const symbol = (typeof src === 'string' ? require(`../../../res/${src}.svg`) : src).default
+    const symbol = (typeof src === 'string' ? require(`../../res/${src}.svg`) : src).default
     const symbolId = symbol ? symbol.id : ''
     return (
         <svg
