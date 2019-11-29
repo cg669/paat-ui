@@ -17,19 +17,19 @@ export interface IconPropType {
 
 const Icon: React.StatelessComponent<IconPropType> = ({ src, className, style, size = 'sm', ...restProps }) => {
     const symbol = (typeof src === 'string' ? require(`../../../res/${src}.svg`) : src).default
-
+    const symbolId = symbol ? symbol.id : ''
     return (
         <svg
             className={classnames({
                 'nm-icon': true,
-                [`nm-icon-${symbol.id}`]: true,
+                [`nm-icon-${symbolId}`]: true,
                 [`nm-icon-${size}`]: true,
                 [className as string]: !!className,
             })}
             style={style}
             {...restProps}
         >
-            <use xlinkHref={`#${symbol.id}`} />
+            <use xlinkHref={`#${symbolId}`} />
         </svg>
     )
 }
