@@ -56,6 +56,6 @@ function repair(src, reg1, reg2, replaceStr = '') {
 repair('./es6/', /\.js(x?)$/, /index\.scss/, 'index.css');
 repair('./lib/', /\.js(x?)$/, /index\.scss/, 'index.css');
 
-changePath('./src/res', './lib/res')
-changePath('./src/res', './es6/res')
+// changePath('./src/res', './lib/res')
+// changePath('./src/res', './es6/res')
 

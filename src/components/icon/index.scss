@@ -14,13 +14,13 @@ $icon-prefix: #{$prefix}-icon;
     }
 
     &-md {
-        height: 14px;
-        width: 14px;
+        height: 24px;
+        width: 24px;
     }
 
     &-lg {
-        height: 16px;
-        width: 16px;
+        height: 32px;
+        width: 32px;
     }
 
     &-file {
@@ -35,7 +35,7 @@ $icon-prefix: #{$prefix}-icon;
     }
 
     &-bold {
-        color:$color-orange-light;
+        color: $color-orange-light;
     }
 }
 
