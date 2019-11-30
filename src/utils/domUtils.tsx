@@ -19,18 +19,22 @@ export interface IFormItem {
     data?: any[]
     name?: string
     placeholder?: string
+    style?: any
     formProps?: GetFieldDecoratorOptions
 }
-
 export function getFormItem(formItem: IFormItem): React.ReactNode {
 
-    const { type, data = [], placeholder = "请输入", ...rest } = formItem
+    const { type, data = [], placeholder = "请输入", style, ...rest } = formItem
 
     const domProps = {
         placeholder:
             type === "RangePicker" && typeof placeholder === "string"
                 ? ["初始时间", "结束时间"]
                 : placeholder,
+        style: {
+            width: '100%',
+            ...style
+        },
         ...rest
     }
 
