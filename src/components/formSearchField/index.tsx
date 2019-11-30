@@ -44,9 +44,9 @@ const SearchField: React.SFC<ISearchFieldForm> = (props: ISearchFieldForm) => {
             search(values)
         })
     }
-    const handleReset = () => {
-        resetFields()
-    }
+    // const handleReset = () => {
+    //     resetFields()
+    // }
     return (
         <Form className="nm-advanced-search-form" onSubmit={handleSearch}>
             <Row gutter={24}>
@@ -69,9 +69,9 @@ const SearchField: React.SFC<ISearchFieldForm> = (props: ISearchFieldForm) => {
                     <Button type="primary" htmlType="submit" loading={searchLoading}>
                         查询
                     </Button>
-                    <Button style={{ marginLeft: 8 }} onClick={handleReset}>
+                    {/* <Button style={{ marginLeft: 8 }} onClick={handleReset}>
                         重置
-                    </Button>
+                    </Button> */}
                 </Col>
             </Row>
         </Form>
