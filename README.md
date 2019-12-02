@@ -52,22 +52,13 @@ alias: {
 
 可参考antd的theme配置,但是由于为了迎合公司图标的问题，针对图标可能需要特殊处理一下
 
-你需要再全局样式加上less文件然后放下如下代码(以后我会想办法解决的！！！不好意思！)
+你需要再全局样式加上less文件然后放下如下代码
 
 ```
 @import "~antd/lib/style/themes/default.less";
 @icon-prefix: ~'nm-icon';
 .@{icon-prefix} {
 color: @primary-color;
-}
-.nm-icon-polygon {
-stroke: @primary-7;
-}
-.nm-icon-bold {
-color: @primary-7;
-}
-a {
-color: @primary-color; 
 }
 ```
 
