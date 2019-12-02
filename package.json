@@ -39,7 +39,7 @@
   "files": [
     "dist",
     "lib",
-    "es",
+    "es6",
     "res",
     "typings"
   ],
