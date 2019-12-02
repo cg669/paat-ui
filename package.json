@@ -41,7 +41,7 @@
     "lib",
     "es",
     "res",
-    "types"
+    "typings"
   ],
   "sideEffects": [
     "dist/*",
