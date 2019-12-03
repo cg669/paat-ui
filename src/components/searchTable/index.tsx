@@ -14,16 +14,12 @@ import { TableProps } from 'antd/lib/table'
 // import { IFormItem } from '../../utils/domUtils'
 
 
-export interface ISearchTable {
-    tableProps?: TableProps<any>
-}
+
+export type ISearchTable = TableProps<any>
 
 const SearchTable: React.SFC<ISearchTable> = (props: ISearchTable) => {
-    const {
-        tableProps
-    } = props
     return (
-        <Table {...tableProps} style={{ marginTop: 30 }} />
+        <Table {...props} style={{ marginTop: 30 }} />
     )
 }
 

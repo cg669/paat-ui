@@ -81,6 +81,23 @@ const searchList = [
   }
 ]
 
+const columns: any[] = [
+  {
+    dataIndex: 'articleId',
+    fixed: 'left',
+    title: 'ID',
+    width: 80,
+  },
+  {
+    dataIndex: 'ip',
+    title: 'IP地址',
+
+  },
+  {
+    dataIndex: 'userName',
+    title: '最新作者',
+  },
+]
 storiesOf('搜索框table', module)
   .addDecorator(withKnobs)
   .addParameters({
@@ -98,6 +115,11 @@ storiesOf('搜索框table', module)
         search,
         searchList,
         searchLoading,
+      }
+    }
+    tableProps={
+      {
+        columns
       }
     }
   />)
