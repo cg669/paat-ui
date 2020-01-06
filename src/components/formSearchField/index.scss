@@ -1,0 +1,20 @@
+@import '../../styles/import';
+
+$login-prefix: #{$prefix}-advanced-search-form;
+
+.#{$login-prefix} {
+    margin-top: 20px;
+
+    .ant-form-item {
+        display: flex;
+    }
+
+    .ant-form-item-label {
+        min-width: 100px;
+    }
+
+    .ant-form-item-control-wrapper {
+        flex: 1;
+
+    }
+}

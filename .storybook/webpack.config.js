@@ -57,7 +57,7 @@ module.exports = {
                         loader: 'sass-loader',
                         options: {
                             sourceMap: true,
-                            data: `@import './src/styles/theme.scss';`,
+                            data: `@import './src/styles/theme.scss';`
                         },
                     },
                 ],
@@ -70,7 +70,7 @@ module.exports = {
                     {
                         loader: "less-loader",
                         options: {
-                            modifyVars: { "@primary-color": "#d8df19" },
+                            modifyVars: { "@primary-color": "#ffa366" },
                             javascriptEnabled: true
                         }
                     }

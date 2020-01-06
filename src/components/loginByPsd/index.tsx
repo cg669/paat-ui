@@ -4,17 +4,22 @@ import { Button, Checkbox, Form, Input } from 'antd'
 
 import { FormComponentProps } from 'antd/lib/form'
 
-import { MobileReg } from '../../utils/validators'
+// import { MobileReg } from '../../utils/validators'
+
+import { useForm } from '../../hooks/useForm'
 
 import './index.scss'
 
 import { ILoginFormValue } from '../../interfaces'
+
+const { useMemo } = React
 
 
 interface ILoginByPsd extends FormComponentProps {
     login: (val: ILoginFormValue) => void
     sendCode?: (tel: string) => void
     extraBtn?: React.ReactNode
+    otherLogin?: React.ReactNode
     loading?: boolean
 }
 
@@ -25,11 +30,20 @@ function LoginByPsd(props: ILoginByPsd) {
         loading,
         login,
         extraBtn,
+        otherLogin
     } = props
     const {
         getFieldDecorator,
         validateFields
     } = form
+
+    const { psdForm, setPsdForm } = useForm() as any || {}
+
+    useMemo(() => {
+        if (!psdForm && setPsdForm) {
+            setPsdForm(form)
+        }
+    }, [form, setPsdForm, psdForm])
 
     const save = () => {
         validateFields((err, values) => {
@@ -45,13 +59,10 @@ function LoginByPsd(props: ILoginByPsd) {
                     getFieldDecorator('tel', {
                         rules: [
                             {
-                                message: '请输入电话', required: true, whitespace: true
+                                message: '请输入账号', required: true, whitespace: true
                             },
-                            {
-                                message: '电话格式错误', pattern: MobileReg,
-                            }
                         ]
-                    })(<Input placeholder='请输入手机号' />)
+                    })(<Input placeholder='请输入账号' />)
                 }
             </Form.Item>
             <Form.Item required={true}>
@@ -81,13 +92,20 @@ function LoginByPsd(props: ILoginByPsd) {
                     登录
                 </Button>
             </Form.Item>
-            <Form.Item>
+            <Form.Item style={{ marginBottom: 10 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     {
-                        getFieldDecorator('isRemember')(<Checkbox>记住密码</Checkbox>)
+                        getFieldDecorator('isRemember', {
+                            valuePropName: 'checked'
+                        })(<Checkbox >记住密码</Checkbox>)
                     }
-                    {extraBtn && <div className='nm-login-extra'>{extraBtn}</div>}
+                    {
+                        otherLogin
+                    }
                 </div>
+            </Form.Item>
+            <Form.Item>
+                {extraBtn && <div className='nm-login-extra'>{extraBtn}</div>}
             </Form.Item>
         </Form>
     )

@@ -4,7 +4,7 @@
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-import { ImgCodeProvider, VCode } from '../../index'
+import { ImgCodeProvider, VCode } from '../../src'
 
 storiesOf('验证码', module)
   .addDecorator(withKnobs)

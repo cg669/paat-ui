@@ -71,7 +71,8 @@ package-lock.json
 # project
 
 static/
-
-# dist/
-
+lib
+es6
+typings
+dist/
 build/

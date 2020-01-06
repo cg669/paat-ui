@@ -1,11 +1,17 @@
+@import './base/index';
+
 * {
   box-sizing: border-box;
 }
+
+$theme-color-font-primary:#333;
+$theme-color-font-secondary: #666;
 
 /* stylelint-disable selector-no-vendor-prefix */
 ::-webkit-input-placeholder {
   color: $theme-color-font-secondary;
 }
+
 /* stylelint-enable */
 
 html {
@@ -14,14 +20,6 @@ html {
   font: 14px/1.5 Helvetica, Tahoma, Arial, -apple-system, 'PingFang Fc', 'Microsoft YaHei', SimSun;
 }
 
-a {
-  color: $theme-color-font-primary;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
 
 ul,
 li,
@@ -58,5 +56,3 @@ select {
   outline: none;
   user-select: none;
 }
-
-@import './base/index';

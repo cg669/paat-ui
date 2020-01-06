@@ -1,0 +1,42 @@
+# c.
+.DS_STORE
+
+# Node.
+node_modules
+npm-debug.log*
+
+# vscode
+.vscode
+
+# yarn
+yarn-error.log
+
+# lerna
+lerna-debug.log
+
+# project
+static
+build
+src
+dist
+public
+stories
+build.js
+
+# other
+tsconfig.json
+tsconfig.prod.json
+tsconfig.test.json
+tslint.json
+images.d.ts
+.babelrc
+
+# storybook
+.storybook/
+.storybook/*.*
+src/components/**/stories.tsx
+
+# dev
+config
+src/dev/
+src/dev.tsx

@@ -48,6 +48,21 @@ alias: {
 如果还不行，尝试下删除node_modules包 重新装下依赖
 
 
+### theme相关
+
+可参考antd的theme配置,但是由于为了迎合公司图标的问题，针对图标可能需要特殊处理一下
+
+你需要再全局样式加上less文件然后放下如下代码
+
+```
+@import "~antd/lib/style/themes/default.less";
+@icon-prefix: ~'nm-icon';
+.@{icon-prefix} {
+color: @primary-color;
+}
+```
+
+
 #### 当然我们也在寻求更优方案也欢迎give me a idea
 
 

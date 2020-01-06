@@ -10,16 +10,21 @@ $login-prefix: #{$prefix}-login;
     right: 0;
     bottom: 0;
     width: 100%;
-    width: 100%;
+    height: 100%;
     min-width: 100vh;
     min-height: 100vh;
     background: rgba(246, 248, 250, 1);
 
     &-container {
-        padding-top: 200px;
-        margin: 0 auto 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0;
+        margin: 0;
         width: 380px;
     }
+
 
     &-header {
         text-align: center;
@@ -41,7 +46,8 @@ $login-prefix: #{$prefix}-login;
         position: relative;
         width: 380px;
         // height: 497px;
-        padding: 40px 30px 20px;
+        height: 450px;
+        padding: 16px 30px 20px;
         background: #fff;
         box-shadow: 0px 0px 60px 0px rgba(0, 45, 90, 0.08);
         border-radius: 8px;
@@ -51,8 +57,42 @@ $login-prefix: #{$prefix}-login;
             justify-content: center;
         }
 
+        .ant-tabs-bar {
+            margin: 0 0 26px 0
+        }
+
         .ant-tabs-nav .ant-tabs-tab {
-            margin: 0 30px;
+            position: relative;
+            margin: 0 20px;
+            transition: all .3s;
+            font-size: 16px;
+            font-weight: 400;
+            color: #666;
+
+            &::after {
+                content: '';
+                display: block;
+                position: relative;
+                top: 10px;
+                margin: 0 auto;
+                width: 50px;
+                height: 2px;
+                background: #333;
+                visibility: hidden;
+            }
+        }
+
+        .ant-tabs-nav .ant-tabs-tab-active {
+            color: #333;
+            font-weight: 600;
+
+            &::after {
+                visibility: visible;
+            }
+        }
+
+        .ant-tabs-ink-bar {
+            display: none !important;
         }
     }
 
@@ -64,13 +104,16 @@ $login-prefix: #{$prefix}-login;
         cursor: pointer;
         width: 50px;
         height: 50px;
-        background: url('../../res/qrcode.png') no-repeat center;
-        background-size: cover;
+        z-index: $zindex-back-top;
+
+        // background: url('https://fileserver.paat.com/410/410cd7de40257b76ed8004b74dd8f74a.png') no-repeat center;
+        // background-size: cover;
+
     }
 
-    &-qr-customer {
-        background-image: url('../../res/customer.png');
-    }
+    // &-qr-customer {
+    //     background-image: url('https://fileserver.paat.com/7f3/7f355c45b45406ff77eb3afb792e0823.png');
+    // }
 
     &-extra {
         text-align: right;
@@ -78,6 +121,43 @@ $login-prefix: #{$prefix}-login;
         a {
             color: #999;
             font-size: 14px;
+        }
+
+        &-default {
+            margin: 20px 30px -24px;
+            display: flex;
+            justify-content: space-between;
+
+            a,
+            span {
+                vertical-align: middle;
+            }
+
+
+            &-icon {
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                margin-right: 8px;
+                position: relative;
+
+                .nm-icon {
+                    position: absolute;
+                    left: 0;
+                    top: 10px;
+                }
+            }
+        }
+
+        .wxCode {
+            width: 300px;
+            height: 350px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .loginIcon {
+            width: 50px;
         }
     }
 
@@ -89,10 +169,29 @@ $login-prefix: #{$prefix}-login;
         height: 0;
         opacity: 0;
 
+        iframe {
+            display: none;
+        }
+
         &-show {
             height: auto;
             overflow: auto;
             opacity: 1;
+
+            iframe {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (max-height: 650px) {
+    .#{$login-prefix} {
+        &-container {
+            position: static;
+            transform: none;
+            margin: 0 auto;
+            width: 380px;
         }
     }
 }
