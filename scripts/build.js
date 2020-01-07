@@ -58,6 +58,10 @@ async function runShellByQueue(shellList) {
 }
 
 async function Main() {
+    if (!shell.exec('npm config get registry').stdout.includes('https://registry.npmjs.org/')) {
+        console.error('Failed: set npm registry to https://registry.npmjs.org/ first');
+        process.exit(1);
+    }
     console.log(chalk.cyan(`\n开始删除文件\n`))
     await delDirs()
     spinner.start(chalk.cyan('开始编译\n'))
@@ -69,6 +73,7 @@ async function Main() {
 module.exports = {
     delDirs
 }
+
 
 try {
     Main()
