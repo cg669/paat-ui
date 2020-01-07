@@ -32,7 +32,7 @@ async function delDirs() {
     return Promise.all(delPaths.map(x => del(x)))
 }
 
-function runShell({ execStr, successMsg, failMsg }) {
+function runShell({ execStr, successMsg = '', failMsg = '' }) {
     return new Promise((resolve, reject) => {
         shell.exec(execStr, (code, stdout, stderr) => {
             if (stderr) {
@@ -59,8 +59,8 @@ async function runShellByQueue(shellList) {
 
 async function Main() {
     if (!shell.exec('npm config get registry').stdout.includes('https://registry.npmjs.org/')) {
-        console.error('Failed: set npm registry to https://registry.npmjs.org/ first');
-        process.exit(1);
+        console.log(chalk.yellow(`set npm registry to https://registry.npmjs.org/ first\n`))
+        runShell({ execStr: 'npm config set registry http://registry.npmjs.org/', successMsg: '切换到npm成功' })
     }
     console.log(chalk.cyan(`\n开始删除文件\n`))
     await delDirs()
