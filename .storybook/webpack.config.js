@@ -44,7 +44,7 @@ module.exports = {
                 test: /\.scss|.css$/,
                 use: [
                     { loader: 'style-loader' },
-                    { loader: 'css-loader', options: { sourceMap: true, minimize: true } },
+                    { loader: 'css-loader', options: { sourceMap: true } },
                     {
                         loader: 'postcss-loader',
                         options: {

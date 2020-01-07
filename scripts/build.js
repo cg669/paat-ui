@@ -60,7 +60,7 @@ async function runShellByQueue(shellList) {
 async function Main() {
     if (!shell.exec('npm config get registry').stdout.includes('https://registry.npmjs.org/')) {
         console.log(chalk.yellow(`set npm registry to https://registry.npmjs.org/ first\n`))
-        runShell({ execStr: 'npm config set registry http://registry.npmjs.org/', successMsg: '切换到npm成功' })
+        runShell({ execStr: 'npm config set registry https://registry.npmjs.org/', successMsg: '切换到npm成功' })
     }
     console.log(chalk.cyan(`\n开始删除文件\n`))
     await delDirs()

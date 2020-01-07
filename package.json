@@ -1,10 +1,11 @@
 {
   "name": "paat-ui",
-  "version": "0.2.27",
+  "version": "0.2.28",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "typings": "typings/index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.7.7",
     "normalize.css": "^8.0.1"
   },
   "peerDependencies": {
@@ -27,6 +28,9 @@
         }
       ]
     ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "build": "$(npm bin)/build-storybook -s public -c .storybook -o build",
