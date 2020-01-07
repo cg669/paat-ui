@@ -1,12 +1,11 @@
 {
   "name": "paat-ui",
-  "version": "0.2.26",
+  "version": "0.2.27",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "typings": "typings/index.d.ts",
   "dependencies": {
-    "normalize.css": "^8.0.1",
-    "react-scripts-ts": "3.1.0"
+    "normalize.css": "^8.0.1"
   },
   "peerDependencies": {
     "antd": "^3.24.3",
@@ -20,10 +19,13 @@
     ],
     "plugins": [
       "@babel/transform-runtime",
-      ["import", {
-        "libraryName": "antd",
-        "style": "css"
-      }]
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "style": "css"
+        }
+      ]
     ]
   },
   "scripts": {
@@ -32,8 +34,7 @@
     "eject": "react-scripts-ts eject",
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy": "node build.js && tsc -p ./ --outDir es6/ -d --declarationDir typings/ && babel es6 --out-dir lib && node-sass -r ./src/ -o es6&& node-sass -r ./src/ -o lib&& node repair.js ",
-    "deploy2": "node build.js && tsc -p ./ --outDir es6/ -d --declarationDir typings/ && babel es6 --out-dir lib && node-sass -r ./src/ -o es6&& node-sass -r ./src/ -o lib&& node repair.js ",
+    "deploy": "node ./scripts/build.js",
     "prepare": "npm run deploy"
   },
   "files": [
@@ -78,6 +79,7 @@
     "babel-plugin-import": "^1.12.2",
     "babel-plugin-transform-runtime": "^7.0.0-beta.0",
     "babel-preset-es2015": "^7.0.0-beta.0",
+    "chalk": "^3.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "fs-extra": "^8.1.0",
     "html-loader": "^0.5.5",
@@ -87,14 +89,18 @@
     "markdown-loader": "^2.0.2",
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "ora": "^4.0.3",
     "postcss-safe-parser": "^4.0.1",
     "raw-loader": "^0.5.1",
     "react": "^16.11.0",
     "react-docgen-typescript-loader": "^3.3.0",
     "react-dom": "^16.11.0",
+    "react-scripts-ts": "3.1.0",
     "react-test-renderer": "^16.10.2",
     "resolve-url-loader": "^2.1.0",
     "sass-loader": "^6.0.6",
+    "shelljs": "^0.8.3",
+    "single-line-log": "^1.1.2",
     "storybook-readme": "^5.0.8",
     "style-loader": "^1.0.0",
     "svg-sprite-loader": "^3.0.6",
