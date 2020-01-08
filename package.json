@@ -1,6 +1,6 @@
 {
   "name": "paat-ui",
-  "version": "0.2.28",
+  "version": "0.2.30",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "typings": "typings/index.d.ts",
@@ -41,7 +41,8 @@
     "build-storybook": "build-storybook",
     "deploy": "node ./scripts/build.js",
     "prepare": "npm run deploy",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "release": "standard-version"
   },
   "husky": {
     "hooks": {
@@ -134,6 +135,7 @@
     "sass-loader": "^6.0.6",
     "shelljs": "^0.8.3",
     "single-line-log": "^1.1.2",
+    "standard-version": "^7.0.1",
     "storybook-readme": "^5.0.8",
     "style-loader": "^1.0.0",
     "svg-sprite-loader": "^3.0.6",
