@@ -30,7 +30,8 @@
     ]
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "scripts": {
     "build": "$(npm bin)/build-storybook -s public -c .storybook -o build",
