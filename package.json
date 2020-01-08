@@ -41,6 +41,20 @@
     "deploy": "node ./scripts/build.js",
     "prepare": "npm run deploy"
   },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "node scripts/verifyCommitMsg.js"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "files": [
     "dist",
     "lib",
@@ -84,12 +98,14 @@
     "babel-plugin-transform-runtime": "^7.0.0-beta.0",
     "babel-preset-es2015": "^7.0.0-beta.0",
     "chalk": "^3.0.0",
+    "eslint": "^6.8.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "fs-extra": "^8.1.0",
     "html-loader": "^0.5.5",
     "image-webpack-loader": "^3.3.1",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
+    "lint-staged": "^9.5.0",
     "markdown-loader": "^2.0.2",
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
@@ -111,6 +127,7 @@
     "svgo-loader": "^1.2.1",
     "terser-webpack-plugin": "^2.1.3",
     "ts-loader": "^6.2.1",
+    "tslint": "^5.20.1",
     "typescript": "^3.6.4",
     "url-loader": "^0.5.9",
     "webpack": "^4.41.2",
