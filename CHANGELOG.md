@@ -1,7 +1,5 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
 ### 0.2.30 (2020-01-08)
 
 
@@ -18,7 +16,3 @@ All notable changes to this project will be documented in this file. See [standa
 * 继承ci ([47b427d](https://github.com/cg669/paat-ui/commit/47b427d533afb67b1659ca09855abc4ad428067e))
 * 继承ci ([4d785b4](https://github.com/cg669/paat-ui/commit/4d785b44838b299ea6d790af3d1145983d4d1f6a))
 
-
-### Bug Fixes
-
-* 代码合并 ([5d1f814](https://github.com/cg669/paat-ui/commit/5d1f814c3ad397ce8a50032af588155f18663a6b))
