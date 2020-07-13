@@ -135,7 +135,7 @@
     "sass-loader": "^6.0.6",
     "shelljs": "^0.8.3",
     "single-line-log": "^1.1.2",
-    "standard-version": "^7.0.1",
+    "standard-version": "^8.0.1",
     "storybook-readme": "^5.0.8",
     "style-loader": "^1.0.0",
     "svg-sprite-loader": "^3.0.6",
